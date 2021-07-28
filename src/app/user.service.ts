@@ -8,7 +8,7 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UserService {
-  private baseURL = 'https://jsonplaceholder.typicode.com/todos';
+  private baseURL = 'http://localhost:8082/api/v1/users';
 
   constructor(private httpClient: HttpClient) {
 

@@ -9,6 +9,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import {FormsModule} from '@angular/forms';
+import { SearchUserComponent } from './search-user/search-user.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {FormsModule} from '@angular/forms';
     UserListComponent,
     CreateUserComponent,
     UserDetailsComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    SearchUserComponent
   ],
   imports: [
     BrowserModule,
