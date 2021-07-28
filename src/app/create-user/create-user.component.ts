@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from '../user';
+import {Router} from '@angular/router';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-create-user',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateUserComponent implements OnInit {
 
-  constructor() { }
+  user: User = new User();
+  constructor(private userService: UserService,
+              private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+  }
+
+  saveUser() {
+    this.userService.createUser(this.user).subscribe( data => {
+        console.log(data);
+        this.goToUserList();
+      },
+      error => console.log(error));
+  }
+
+  goToUserList() {
+    this.router.navigate(['/users']);
+  }
+
+  onSubmit() {
+    console.log(this.user);
+    this.saveUser();
   }
 
 }
